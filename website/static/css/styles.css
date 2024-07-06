@@ -66,7 +66,19 @@ scroll-behavior: smooth;
 }
 }
 
+body {
+min-height: 100vh;
+width: 100%;
+overflow-x: hidden;
+font-family: Corbel ;
+font-size: var(--bs-body-font-size);
+font-weight: var(--bs-body-font-weight);
+line-height: var(--bs-body-line-height);
+text-align: var(--bs-body-text-align);
+background-color: var(--bs-body-bg);
 
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
 hr {
 margin: 1rem 0;
@@ -3945,7 +3957,7 @@ button:hover {
 }
 
 .fade {
-  animation:fade 4s infinite;
+  animation:fade 5s infinite;
 }
 
 @keyframes fade {
