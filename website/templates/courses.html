@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block tittle %}Courses{%endblock%}
+
+{% block content %}
+
+<section class="py-24 px-5 text-gray-600 body-font">
+  <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">Recommended courses
+  </h1>
+
+<div id="section-b" class="flex flex-wrap  sm:-m-4 -mx-4 -mb-10 -mt-4">
+  <div class="carding p-4 md:w-1/3 sm:mb-0 mb-6">
+      <div class="rounded-lg overflow-hidden shadow-lg border border-gray-200">
+          <img alt="C Programming" class="object-cover object-center h-64 w-full cursor-pointer" src="{{ url_for('static', filename='/images/Learn C Programming Language.png') }}">
+      </div>
+      <div class="mt-5">
+          <h2 class="text-xl font-medium text-gray-900 font-bold">C Programming</h2>
+          <ul class="text-base leading-relaxed mt-2 list-disc list-inside">
+              <li>The C programming language is the recommended language for creating embedded system drivers.</li>
+              <li>The availability of machine-level hardware APIs, C compilers, dynamic memory allocation</li>
+          </ul>
+          <a href="C/Introduction of C language.html" class="button1 inline-flex items-center mt-3">Learn Now
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+          </a>
+      </div>
+  </div>
+  <div class="carding p-4 md:w-1/3 sm:mb-0 mb-6">
+      <div class="rounded-lg overflow-hidden shadow-lg border border-gray-200">
+          <img alt="C++ Programming" class="object-cover object-center h-64 w-full cursor-pointer" src="{{ url_for('static', filename='/images/Learn C++ Programming Language.png') }}">
+      </div>
+      <div class="mt-5">
+          <h2 class="text-xl font-medium text-gray-900 font-bold">C++ Programming</h2>
+          <ul class="text-base leading-relaxed mt-2 list-disc list-inside">
+              <li>C++ is a high-level general-purpose programming language created by Bjarne Stroustrup as an extension of C.</li>
+              <li>It supports multiple programming paradigms including structured, object-oriented, and generic programming.</li>
+          </ul>
+          <a href="C++/Introduction of C++.html" class="button1 inline-flex items-center mt-3">Learn Now
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+          </a>
+      </div>
+  </div>
+  <div class="carding p-4 md:w-1/3 sm:mb-0 mb-6">
+    <div class="rounded-lg overflow-hidden shadow-lg border border-gray-200">
+        <img alt="C++ Programming" class="object-cover object-center h-64 w-full cursor-pointer" src="{{ url_for('static', filename='/images/Learn Python Programming Language.png') }}">
+    </div>
+    <div class="mt-5">
+        <h2 class="text-xl font-medium text-gray-900 font-bold">Python Programming</h2>
+        <ul class="text-base leading-relaxed mt-2 list-disc list-inside">
+            <li>C++ is a high-level general-purpose programming language created by Bjarne Stroustrup as an extension of C.</li>
+            <li>It supports multiple programming paradigms including structured, object-oriented, and generic programming.</li>
+        </ul>
+        <a href="C++/Introduction of C++.html" class="button1 inline-flex items-center mt-3">Learn Now
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+<div class="carding p-4 md:w-1/3 sm:mb-0 mb-6">
+  <div class="rounded-lg overflow-hidden shadow-lg border border-gray-200">
+      <img alt="C++ Programming" class="object-cover object-center h-64 w-full cursor-pointer" src="{{ url_for('static', filename='/images/Learn Python Programming Language.png') }}">
+  </div>
+  <div class="mt-5">
+      <h2 class="text-xl font-medium text-gray-900 font-bold">Java Programming</h2>
+      <ul class="text-base leading-relaxed mt-2 list-disc list-inside">
+          <li>C++ is a high-level general-purpose programming language created by Bjarne Stroustrup as an extension of C.</li>
+          <li>It supports multiple programming paradigms including structured, object-oriented, and generic programming.</li>
+      </ul>
+      <a href="C++/Introduction of C++.html" class="button1 inline-flex items-center mt-3">Learn Now
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+      </a>
+  </div>
+</div>
+  <div class="carding p-4 md:w-1/3 sm:mb-0 mb-6">
+      <div class="rounded-lg overflow-hidden shadow-lg border border-gray-200">
+          <img alt="Python Programming" class="object-cover object-center h-64 w-full cursor-pointer" src="{{ url_for('static', filename='/images/Learn Python Programming Language.png') }}">
+      </div>
+      <div class="mt-5">
+          <h2 class="text-xl font-medium text-gray-900 font-bold">Web Scrapping </h2>
+          <ul class="text-base leading-relaxed mt-2 list-disc list-inside">
+              <li>Python is a high-level, general-purpose programming language known for its readability and simplicity.</li>
+              <li>It supports multiple programming paradigms including procedural, object-oriented, and functional programming.</li>
+          </ul>
+          <a href="#!" class="button1 inline-flex items-center mt-3">Learn Now
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+          </a>
+      </div>
+  </div>
+</div>
+</section>
+{%endblock%}

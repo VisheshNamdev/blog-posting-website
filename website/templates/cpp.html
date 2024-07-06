@@ -1,0 +1,370 @@
+{% extends "base.html" %}
+{% block title %}CPP{% endblock %}
+
+{% block content %}
+<center>
+  <div class="scrollable-container bg-gray-200">
+    <div class="scrollable-content" id="scrollableContent">
+      <ul>
+        <li><a href="#"><b>Python</b></a></li>
+        <li><a href="#"><b>C</b></a></li>
+        <li><a href="#"><b>C++ </b></a></li>
+        <li><a href="#"><b>JAVA</b></a></li>
+        <li><a href="/posts"><b>Blogs</b></a></li>
+        <li><a href="/basic-practice-problems"><b>Basic Practice Problems</b></a></li>
+        <li><a href="/advance-practice-problems"><b>Advance Practice Problems</b></a></li>
+        <li><a href="/moderate-practice-problems"><b>Moderate Practice Problems</b></a></li>
+        <li><a href="/memes"><b>Memes</b></a></li>
+      </ul>
+
+    </div>
+
+  </div>
+</center>
+ <!-- Page content-->
+ <div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <!-- Post header-->
+        <header class="mb-4">
+          <!-- Post title-->
+          <h1 class="fw-bolder mb-1">Abstraction in C++</h1>
+          <!-- Post meta content-->
+          <div class="text-muted fst-italic mb-2 whity">Posted on December 15, 2023 by Vishesh Namdev</div>
+          <!-- Post categories-->
+          <a class="badge bg-secondary text-decoration-none link-light"
+            href="/Python/Introduction of Python.html">Python</a>
+          <a class="badge bg-secondary text-decoration-none link-light"
+            href="/C/Introduction of C language.html">C</a>
+          <a class="badge bg-secondary text-decoration-none link-light" href="/C++/Introduction of C++.html">C++</a>
+          <a class="badge bg-secondary text-decoration-none link-light"
+            href="/Java/Introduction of Java.html">Java</a>
+        </header>
+        <!-- Preview image figure--> <a href="https://youtu.be/7p3OricJzhc?feature=shared" target="_blank">
+          <figure class="mb-4"><img class="img-fluid rounded" src="assets-c++/C++ Programming.png"
+              alt="C++ Programming" /></figure>
+        </a>
+        <!-- Post content-->
+        <section class="mb-5">
+
+          <p class="fs-5 mb-4"><span style="color: #ffa500; font-size: 35px;"><b>Abstraction</b></span> is a
+            fundamental concept in Object-Oriented Programming (OOP) that involves simplifying complex systems by
+            modeling classes based on their essential properties and behaviors, while hiding the unnecessary
+            details. In C++, abstraction is implemented through abstract classes and pure virtual functions.</p>
+
+
+          <h3 class="mt-4 mb-4 whity" style="color: #ffa500;"><b>Abstract Class:</b></h3>
+          <p>An abstract class is a class that cannot be instantiated on its own.
+            It often contains one or more pure virtual functions.
+            Abstract classes are used as a foundation for derived classes.</p>
+          <div class=" mt-4 mb-4 code" id="code-section">
+            <span class="class">class</span> <span class="class-name">Shape</span> {<br>
+            <span class="keyword">public:</span><br>
+            <span class="comment"> // Pure virtual function</span><br>
+            <span class="keyword"> virtual</span> <span class="function">void</span> <span
+              class="function-name">draw</span>() <span class="keyword">const</span> <span class="operator">=</span>
+            <span class="number">0</span>;<br><br>
+
+            <span class="comment"> // Regular member function</span><br>
+            <span class="keyword"> void</span> <span class="function">move</span>() {<br>
+            <span class="operator"> cout</span>
+            << <span class="string">"Moving the shape"</span>
+              << <span class="operator">endl;</span><br>
+                }<br>
+                };<br>
+          </div>
+
+          <h3 class="mt-4 mb-4  whity" style="color: #ffa500;"><b>Pure Virtual Function:</b></h3>
+          <p> A pure virtual function is a virtual function that has no implementation in the base class.
+            It is declared using virtual returnType functionName() = 0;.
+            Derived classes must provide their own implementation for pure virtual functions.</p>
+          <div class=" mt-4 mb-4 code" id="code-section1">
+            <span class="class">class</span> <span class="class-name">Shape</span> {<br>
+            <span class="keyword">public:</span><br>
+            <span class="comment"> // Pure virtual function</span><br>
+            <span class="keyword"> virtual</span> <span class="function">void</span> <span
+              class="function-name">draw</span>() <span class="keyword">const</span> = <span
+              class="number">0</span>;<br>
+            };<br><br>
+
+            <span class="class">class</span> <span class="class-name">Circle</span> : <span
+              class="keyword">public</span> <span class="class-name">Shape</span> {<br>
+            <span class="keyword">public:</span><br>
+            <span class="comment"> // Override the pure virtual function</span><br>
+            <span class="keyword"> void</span> <span class="function-name">draw</span>() <span
+              class="keyword">const</span> <span class="keyword">override</span> {<br>
+            <span class="operator"> cout</span>
+            << <span class="string">"Drawing a circle"</span>
+              << <span class="operator">endl;</span><br>
+                }<br>
+                };<br>
+          </div>
+
+          <h2 class="mt-4 mb-4 whity" style="color: #ffa500;">Benefits of Abstraction:</h2>
+
+          <p><b>(a). Code Simplification:</b> Abstract classes focus on the essential aspects of an object, hiding
+            unnecessary details.
+            This simplifies the code and makes it more comprehensible.</p>
+          <p><b>(b). Flexibility and Extensibility:</b> Abstract classes provide a flexible foundation for derived
+            classes to extend functionality.
+            New derived classes can be easily added without modifying existing code.</p>
+          <p><b>(c). Enforcement of Structure:</b> Abstract classes define a structure that derived classes must
+            adhere to.This enforces a consistent design across related classes.<br></p>
+
+          <h3>Example of Abstraction in C++:</h3>
+          <div class="code" id="code-section">
+            <span class="keyword">#include &lt;iostream&gt;</span><span class="copy-button rounded"
+              onclick="copyCode()">Copy Code</span><br>
+            <span class="keyword">using</span> <span class="keyword">namespace</span> <span
+              class="class">std</span>;<br><br>
+
+            <span class="comment">// Abstract class</span><br>
+            <span class="class">class</span> <span class="class-name">Shape</span> {<br>
+            <span class="keyword">public:</span><br>
+            <span class="comment"> // Pure virtual function</span><br>
+            <span class="keyword"> virtual</span> <span class="keyword">void</span> <span
+              class="function">draw</span>() <span class="keyword">const</span> = <span
+              class="number">0</span>;<br><br>
+
+            <span class="comment"> // Regular member function</span><br>
+            <span class="keyword"> void</span> <span class="function">move</span>() {<br>
+            <span class="operator"> cout</span>
+            << <span class="string">"Moving the shape"</span>
+              << <span class="operator">endl;</span><br>
+                }<br>
+                };<br><br>
+
+                <span class="comment">// Concrete class derived from Shape</span><br>
+                <span class="class">class</span> <span class="class-name">Circle</span> : <span
+                  class="keyword">public</span> <span class="class-name">Shape</span> {<br>
+                <span class="keyword">public:</span><br>
+                <span class="comment"> // Override the pure virtual function</span><br>
+                <span class="keyword"> void</span> <span class="function">draw</span>() <span
+                  class="keyword">const</span> <span class="keyword">override</span> {<br>
+                <span class="operator"> cout</span>
+                << <span class="string">"Drawing a circle"</span>
+                  << <span class="operator">endl;</span><br>
+                    }<br>
+                    };<br><br>
+
+                    <span class="keyword">int</span> <span class="function">main</span>() {<br>
+                    <span class="comment"> // Creating objects</span><br>
+                    <span class="class-name">Circle</span> <span class="class-instance">myCircle</span>;<br><br>
+
+                    <span class="comment"> // Calling member functions</span><br>
+                    <span class="class-instance">myCircle</span>.<span class="function">move</span>();<br>
+                    <span class="class-instance">myCircle</span>.<span class="function">draw</span>();<br><br>
+
+                    <span class="keyword">return</span> <span class="number">0</span>;<br>
+                    }<br>
+          </div>
+          <p class="mt-4 mb-4">In this example, the Shape class is an <b>abstract</b> class with a pure
+            <b>virtual</b> function draw(). The <b>Circle</b> class is a concrete class derived from Shape and
+            provides its own <b>implementation</b> of the draw() function. The <b>move()</b> function is a regular
+            member function <b>inherited</b> from the Shape class</p>
+          <p>Using this <b>abstraction</b>, we can create various shapes <b>(such as rectangles, triangles,
+              etc.)</b> by deriving <b>new</b> classes from the <b>abstract</b> Shape class, ensuring that each
+            shape has its own <b>implementation</b> of the draw() function while inheriting common functionality
+            from the abstract base class.</p>
+        </section>
+      </article>
+      <!-- Comments section-->
+
+    </div>
+    <!-- Side widgets-->
+
+    <div class="col-lg-4">
+      <!-- Search widget-->
+
+      <!-- Categories widget-->
+
+      <!--7 Introduction of C++ language-->
+      <div class="card mb-4 mt-4">
+        <div class="card-header">Introduction</div>
+        <div class="card-body">
+          <div class="row">
+            <ul class="list-unstyled mb-0">
+
+              <li><a href="Introduction of C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;What is
+                  C++ & Hello World in C++</a></li>
+              <li><a href="Variables and Comments in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Variables and Comments</li>
+              <li><a href="Data types and Constants in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Data types and Constants </a></li>
+              <li><a href="Literals and Escape Sequence in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Literals and Escape Sequence</a></li>
+              <li><a href="Input and Output in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;C++
+                  I/O</a></li>
+              <li><a href="Operators in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;C++
+                  Operators</a></li>
+              <li><a href="Basic C++ Practice Problems.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Related Questions</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--8 Control flow of C++ language-->
+      <div class="card mb-4 mt-4">
+        <div class="card-header">Control Flow and Decision Making</div>
+        <div class="card-body">
+          <div class="row">
+            <ul class="list-unstyled mb-0">
+              <li><a href="if...else statement in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;C
+                  if and if...else statement</a></li>
+              <li><a href="Switch Case Statements in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Switch Case statements</a></li>
+              <li><a href="Break, Continue and Goto in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;C Break/Continue and goto </a></li>
+              <li><a href="Loops in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;C Loops </a></li>
+              <li><a href="For Loop in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;C for Loop</a>
+              </li>
+              <li><a href="while Loop in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;while loop
+                  in C</a></li>
+              <li><a href="do-while Loop in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;do-while
+                  loop in C </a></li>
+              <li><a href="Control Flow and Decision making Practice Problems.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Related Quesitions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--6 Functions in C++ language-->
+      <div class="card mb-4 mt-4">
+        <div class="card-header"> Functions</div>
+        <div class="card-body">
+          <div class="row">
+            <ul class="list-unstyled mb-0">
+              <li><a href="Function in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;C++
+                  Functions</a></li>
+              <li><a href="Function Parameters in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Function Parameters </li>
+              <li><a href="Call by Value and Call by Reference in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Call by Value and Call by Reference</a></li>
+              <li><a href="Function Overloading in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Function Overloading</a></li>
+              <li><a href="Recursive Function in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Recursive Functions</a></li>
+              <li><a href="Practice Problems on Functions.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Related Questions</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--6 Arrays and Strings in C++-->
+      <div class="card mb-4 mt-4">
+        <div class="card-header">Arrays and Strings in C++</div>
+        <div class="card-body">
+          <div class="row">
+            <ul class="list-unstyled mb-0">
+              <li><a href="Array in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Arrays in C++</a>
+              </li>
+              <li><a href="Multidimensional Array and 2-D Array in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Multidimensional Arrays</a></li>
+              <li><a href=""><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Passing Arrays to Functions</a>
+              </li>
+              <li><a href="String Basics in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Strings
+                  Basic</a></li>
+              <li><a href="String Functions in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;String
+                  Functions </a></li>
+              <li><a href="Practice Problems on Arrays and Strings.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Related Quesitions</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--3 Pointers of C++ language-->
+      <div class="card mb-4 mt-4">
+        <div class="card-header">Pointers in C</div>
+        <div class="card-body">
+          <div class="row">
+            <ul class="list-unstyled mb-0">
+              <li><a href="Pointers in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Basics of
+                  Pointers</a></li>
+              <li><a href="Pointers and Array in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Pointer and Arrays in C++ </a></li>
+              <li><a href="Practice Problems on Pointers in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Related Quesitions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--7 Object-Oriented Programming of C++ language-->
+      <div class="card mb-4 mt-4">
+        <div class="card-header"> Object-Oriented Programming</div>
+        <div class="card-body">
+          <div class="row">
+            <ul class="list-unstyled mb-0">
+              <li><a href="Basics of Object Oriented Programming in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Basics of OOP's and Classes and Objects</a>
+              </li>
+              <li><a href="Constructors in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Constructors</a></li>
+              <li><a href="Encapsulation in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Encapsulation </a></li>
+              <li><a href="Inheritance in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Inheritance</a></li>
+              <li><a href="Polymorphism in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Polymorphism </a></li>
+              <li><a href="Abstraction in C++.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Abstraction
+                </a></li>
+              <li><a href="Practice Problems on OOP's.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Related Questions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--3 File Handling of C++ language-->
+      <div class="card mb-4 mt-4">
+        <div class="card-header">File Handling</div>
+        <div class="card-body">
+          <div class="row">
+            <ul class="list-unstyled mb-0">
+              <li><a href="Basics of File Handling in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Basics of File Handling and it's
+                  Operations</a></li>
+              <li><a href="Practice Problems on File handling in C++.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Related Quesitions</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--6 More links-->
+      <div class="card mb-4 mt-4">
+        <div class="card-header"><b>More Links</b></div>
+        <div class="card-body">
+          <div class="row">
+            <ul class="list-unstyled mb-0">
+              <li><a href="/index.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Home</a></li>
+              <li><a href="\Basic Questions\Basic Practice Programs Intro.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Basic Practice Problems</a></li>
+              <li><a href="\Moderate Questions\Moderate Practice Problems.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Moderate Practice Problems</a></li>
+              <li><a href="\Advance Questions\Advanced Practice Problems.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Advance Practice Problems</a></li>
+              <li><a href="/Fun with Code - The Royal Coding.html"><i
+                    class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Code with Fun(Memes)</a></li>
+              <li><a href="\Blogs\HTTP Errors.html"><i class="fa-regular fa-circle-check"></i>&nbsp&nbsp;Blogs</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
