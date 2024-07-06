@@ -3957,7 +3957,7 @@ button:hover {
 }
 
 .fade {
-  animation:fade 5s infinite;
+  animation:fade 4s infinite;
 }
 
 @keyframes fade {
