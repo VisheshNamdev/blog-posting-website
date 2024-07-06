@@ -3998,7 +3998,7 @@ pre {
 }
 
 .fade {
-  animation:fade 4s infinite;
+  animation:fade 5s infinite;
 }
 
 @keyframes fade {
