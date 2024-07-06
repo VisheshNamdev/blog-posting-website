@@ -1,4 +1,16 @@
 @charset "UTF-8";
+/*!
+* Start Bootstrap - Simple Sidebar v6.0.6 (https://startbootstrap.com/template/simple-sidebar)
+* Copyright 2013-2023 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+*/
+/*!
+* Bootstrap  v5.2.3 (https://getbootstrap.com/)
+* Copyright 2011-2022 The Bootstrap Authors
+* Copyright 2011-2022 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+*/
+
 :root {
 --bs-orange: #ffa500;
 --bs-orange: #fd7e14;
@@ -238,8 +250,27 @@ font-family: var(--bs-font-monospace);
 font-size: 1em;
 }
 
+pre {
+display: block;
+margin-top: 0;
+margin-bottom: 1rem;
+overflow: auto;
+font-size: 0.875em;
+}
+pre code {
+font-size: inherit;
+color: inherit;
+word-break: normal;
+}
 
-
+code {
+font-size: 0.875em;
+color: var(--bs-code-color);
+word-wrap: break-word;
+}
+a > code {
+color: inherit;
+}
 
 kbd {
 padding: 0.1875rem 0.375rem;
@@ -3914,13 +3945,23 @@ button:hover {
   background: #ffa500;
 }
 
-
-/* Day and Night Mode   */
-.dark-mode {
-  background-color: #333; /* Dark background color */
-  color: #fff; /* Light text color */
-  /* Add more styles for dark mode elements */
+pre {
+  background-color: rgb(233, 228, 228);
+  color: #333333;
+  padding: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 7px;
+  font-family: 'Courier New', monospace;
 }
+.copy-button{
+  margin-left: 50px;
+}
+
+/* Day and Night Mode  
+
+
+*/
 
 
 .slideshow-container {
@@ -3972,7 +4013,7 @@ button:hover {
   transition: all 0.3s;
 }
 .carding:hover{
-  transform: scale(1.03);
+  transform: scale(1.08);
 }
 .steps{
   margin: 22px;
@@ -4054,42 +4095,81 @@ button:hover {
 
 /* Slider  */
 .slider-container {
-  overflow: hidden;
-  position: relative;
-  max-width: 100%;
-}
-.slider {
-  display: flex;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-.card {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  margin-right: 10px;
-}
-.slider-container::-webkit-scrollbar {
-  display: none;
-}
-.prev-button, .next-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  user-select: none;
-}
-.prev-button {
-  left: 10px;
-}
-.next-button {
-  right: 10px;
-}
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .slider {
+            padding: 10px;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .card{
+            flex: 0 0 auto;
+            margin-right: 12px;
+            width: 300px;
+            transition: margin-right 0.5s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .card{
+            transition: all 0.3s;
+          }
+          .card:hover{
+            transform: scale(1.05);
+          }
+        
+        .card-image {
+            border-radius: 10px 10px 0px 0px;
+            width: 100%;
+            height: auto;
+        }
+        
+        .card-content  {
+            border-radius: 10px;
+            font-size: 10px; /* Increase font size for better readability */
+            font-family: Corbel; /* Choose a suitable font family */
+            padding: 10px;
+            margin-bottom: 2px;
+            background-color: #fff;
+            color: black; /* Set text color */
+            text-align: center; /* Center-align the content */
+        }
+        
+        .card-heading {
+            margin: 0;
+            font-weight: bold; /* Add some emphasis to the heading */
+        }
+        
+        .prev-button, 
+        .next-button{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(59, 59, 59);
+            background: transparent;
+            font-size: 20px;
+            border: none;
+            padding-left: 5px;
+            padding-right: 5px;
+            cursor: pointer;
+            border-radius: 100%;
+        }
+        .prev-button:hover, 
+        .next-button:hover{
+            color: black;
+            background: #fcf4f4;
+        }
+        
+        .prev-button{
+            left: 5px;
+        }
+        
+        .next-button{
+            right: 5px;
+        }
         
 /* Pop up's  */
         .popup {
@@ -4345,62 +4425,4 @@ form input[type="file"] {
 
 .oauth-btn:hover {
   background-color: #357ae8;
-}
-
-
-/* Active link Css */
-.active-link {
-  border: 2px solid #ffa500;
-  color: #ffa500; /* Orange bg color for active links */
-}
-
-
-.code-container {
-  position: relative;
-  margin-bottom: 20px;
-  font-size: 17px;
-}
-.copy-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 5px 10px;
-  background: #444;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.copy-button:hover {
-position: absolute;
-top: 10px;
-right: 10px;
-padding: 5px 10px;
-background: #fffefe;
-color: #ffa500;
-border: none;
-cursor: pointer;
-border-radius: 5px;
-}
-.copy-button:focus {
-  outline: none;
-}
-.output-container {
-  background: #e8e8e8;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 10px;
-  font-family: monospace;
-  color: #333;
-}
-
-
-
-
-.post-card-content {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
